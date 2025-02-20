@@ -1,13 +1,15 @@
-lleva_a(Vancouver,Edmonton,16).
-lleva_a(Vancouver,Calgary,13).
-leva_a(Calgary,Edmonton,4).
-lleva_a(Edmonton,Saskatoon,12).
-lleva_a(Saskatoon,Calgary,9).
-leva_a(Calgary,Regina,14).
-leva_a(Regina,Saskatoon,7).
-leva_a(Regina,Winnipeg,4).
-lleva_a(Saskatoon,Winnipeg,20).
+lleva_a(vancouver,edmonton,16).
+lleva_a(vancouver,calgary,13).
+lleva_a(calgary,edmonton,4).
+lleva_a(edmonton,saskatoon,12).
+lleva_a(saskatoon,calgary,9).
+lleva_a(calgary,regina,14).
+lleva_a(regina,saskatoon,7).
+lleva_a(regina,winnipeg,4).
+lleva_a(saskatoon,winnipeg,20).
+lleva_a(tin,tal,15).
 
-conectado(X,Y) :- lleva_a(X,Y,_).
-conectado(X,Y) :- lleva_a(Y,X,_).
-
+conecta(A,B,_):-lleva_a(A,B,_);lleva_a(B,A,_).
+llega_a(X,Y) :- conecta(X,B,_),conecta(B,Y,_).
+Distancia
+camino(X,Y,[X,Y],Distancia):-lleva_a(X,Y,).
