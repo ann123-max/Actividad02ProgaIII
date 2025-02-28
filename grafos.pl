@@ -7,7 +7,6 @@ lleva_a(calgary,regina,14).
 lleva_a(regina,saskatoon,7).
 lleva_a(regina,winnipeg,4).
 lleva_a(saskatoon,winnipeg,20).
-lleva_a(tin,tal,15).
 
 
 % Conexión bidireccional
