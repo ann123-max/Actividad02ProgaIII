@@ -13,3 +13,19 @@ conecta(A,B,_):-lleva_a(A,B,_);lleva_a(B,A,_).
 llega_a(X,Y) :- conecta(X,B,_),conecta(B,Y,_).
 Distancia
 camino(X,Y,[X,Y],Distancia):-lleva_a(X,Y,).
+
+% Conexión bidireccional
+conecta(A, B, D) :- lleva_a(A, B, D).
+conecta(A, B, D) :- lleva_a(B, A, D).
+
+% Verificar si se puede llegar de X a Y (recursivo)
+llega_a(X, Y) :- conecta(X, Y, _).
+llega_a(X, Y) :- conecta(X, Z, _), llega_a(Z, Y).
+% Camino directo (caso base)
+camino(X, Y, D) :- lleva_a(X, Y, D).
+
+% Camino con paso intermedio (caso recursivo)
+camino(X, Y, D) :- 
+    lleva_a(X, Z, D1), 
+    camino(Z, Y, D2),
+    D is D1 + D2.
