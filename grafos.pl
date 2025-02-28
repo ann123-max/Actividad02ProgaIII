@@ -9,10 +9,6 @@ lleva_a(regina,winnipeg,4).
 lleva_a(saskatoon,winnipeg,20).
 lleva_a(tin,tal,15).
 
-conecta(A,B,_):-lleva_a(A,B,_);lleva_a(B,A,_).
-llega_a(X,Y) :- conecta(X,B,_),conecta(B,Y,_).
-Distancia
-camino(X,Y,[X,Y],Distancia):-lleva_a(X,Y,).
 
 % Conexión bidireccional
 conecta(A, B, D) :- lleva_a(A, B, D).
