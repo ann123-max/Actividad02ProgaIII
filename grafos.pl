@@ -15,8 +15,8 @@ conecta(A, B, D) :- lleva_a(A, B, D).
 conecta(A, B, D) :- lleva_a(B, A, D).
 
 % Verificar si se puede llegar de X a Y (recursivo)
-llega_a(X, Y) :- conecta(X, Y, _).
-llega_a(X, Y) :- conecta(X, Z, _), llega_a(Z, Y).
+llega_a(X, Y) :- lleva_a(X, Y, _).
+llega_a(X, Y) :- lleva_a(X, Z, _), llega_a(Z, Y).
 % Camino directo (caso base)
 camino(X, Y, D) :- lleva_a(X, Y, D).
 
